@@ -1,0 +1,19 @@
+name: sample-app
+version: 1.0.0
+environment: development
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    environment:
+      APP_ENV: dev
+      LOG_LEVEL: debug
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: appdb
